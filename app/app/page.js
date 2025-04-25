@@ -1,3 +1,9 @@
+import { DisWordBlock } from "./components/DisWord";
+
 export default function Home() {
-  return <></>;
+  return (
+    <>
+      <DisWordBlock />
+    </>
+  );
 }

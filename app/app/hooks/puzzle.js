@@ -1,6 +1,6 @@
-import { fetcWord } from "./fetch";
+import fetchWord from "./fetch";
 
-const word = fetcWord(); // source
+const word = fetchWord().split(""); // source
 const numOfLetters = word.length;
 
 // Remove a few letters into the word to make the guessing fair
@@ -23,9 +23,15 @@ for (let i = 0; i < gaps; i++) {
 
 // determine the correct guesses
 let guesses = [];
+//determin the question
 let question = word;
+// correct inputs
+let ans = [];
 
 for (let y = 0; y < pos.length; y++) {
   guesses.push(word[pos[y]]);
-  question.pos[y] = "-"; // note this is still in array format
+  question.pos[y] = "-"; // note: this is still in array format
+  ans.push(word.pos[y]);
 }
+
+export { guesses, question, ans }; // export to use in the individual components
